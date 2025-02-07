@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 // Calcular la posición considerando el header fijo
-                const headerOffset = 80; // Altura del header + padding
+                const headerOffset = 64; // Altura del header
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -30,12 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (!emailInput || !submitButton) return;
             
-            const email = emailInput.value;
+            const email = emailInput.value.trim();
+            if (!email) {
+                alert('Por favor ingresa tu email');
+                return;
+            }
             
             try {
                 // Deshabilitar el formulario mientras se procesa
                 emailInput.disabled = true;
                 submitButton.disabled = true;
+                submitButton.style.opacity = '0.7';
                 
                 // Aquí irá la lógica para enviar el email al backend
                 console.log('Email registrado:', email);
@@ -52,23 +57,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Re-habilitar el formulario
                 emailInput.disabled = false;
                 submitButton.disabled = false;
+                submitButton.style.opacity = '1';
             }
         });
     }
 
     // Track CTA button clicks
-    const ctaButtons = document.querySelectorAll('.cta-primary');
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if (!button.closest('form')) {
-                document.querySelector('.waitlist-form input').focus();
-            }
-        });
+    document.querySelectorAll('.cta-primary').forEach(button => {
+        if (!button.closest('form')) {
+            button.addEventListener('click', () => {
+                console.log('CTA clicked');
+            });
+        }
     });
 
     // Track store button clicks
-    const storeButtons = document.querySelectorAll('.store-button');
-    storeButtons.forEach(button => {
+    document.querySelectorAll('.store-button').forEach(button => {
         button.addEventListener('click', () => {
             alert('Las apps estarán disponibles pronto. ¡Únete a la lista de espera!');
         });
