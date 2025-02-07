@@ -51,8 +51,13 @@ body {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
-    width: 100%;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
 }
 
 /* Typography */
@@ -132,8 +137,8 @@ h3 {
 
 /* Hero Section */
 .hero {
-    min-height: 50vh;
-    padding: 4rem 0 2rem;
+    min-height: 60vh;
+    padding: 6rem 0 4rem;
     display: flex;
     align-items: center;
     margin-top: 0;
@@ -147,22 +152,22 @@ h3 {
 }
 
 .hero h1 {
-    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
     color: var(--on-surface);
 }
 
 .hero h2 {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--on-surface-variant);
 }
 
 .hero .subtitle {
-    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
     color: var(--on-surface-variant);
     max-width: 600px;
 }
@@ -170,9 +175,28 @@ h3 {
 .cta-group {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     margin-top: 1.5rem;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 0 3rem;
+        text-align: center;
+    }
+
+    .hero .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* Adjust main content */
@@ -182,17 +206,18 @@ main {
 
 /* Buttons */
 .cta-primary {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    border-radius: 100px;
     background: var(--primary);
     color: var(--on-surface);
     border: none;
-    padding: 16px 40px;
-    border-radius: 100px;
-    font-size: 1.125rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-md);
-    min-width: 200px;
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
 }
 
 .cta-primary:hover {
@@ -202,28 +227,41 @@ main {
     box-shadow: var(--shadow-lg);
 }
 
-.store-buttons {
-    display: flex;
-    gap: var(--spacing-base);
-}
-
 .store-button {
+    padding: 0.875rem 1.5rem;
+    border-radius: 100px;
     background: var(--surface);
     color: var(--on-surface);
-    border: 2px solid var(--secondary);
-    padding: 12px 28px;
-    border-radius: 100px;
-    font-weight: 500;
+    border: 1px solid var(--surface-light);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
 }
 
 .store-button:hover {
+    transform: translateY(-2px);
     background: var(--secondary);
     color: white;
-    transform: translateY(-1px);
     box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .cta-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .store-buttons {
+        width: 100%;
+    }
+
+    .store-button {
+        flex: 1;
+        justify-content: center;
+    }
 }
 
 /* Benefits Section */
@@ -247,40 +285,64 @@ main {
 .benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    gap: 2.5rem;
     margin: 0 auto;
     max-width: 1100px;
 }
 
 .benefit {
     display: flex;
+    gap: 1.5rem;
     align-items: flex-start;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-lg);
-    background: var(--surface);
-    border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--surface-light);
+    padding: 1.5rem;
+    background: var(--surface-light);
+    border-radius: 16px;
+    transition: transform 0.2s;
 }
 
 .benefit:hover {
-    transform: translateY(-5px);
-    border-color: var(--secondary);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
 }
 
-.icon {
+.benefit .icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: var(--surface);
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    background: var(--surface-light);
-    border-radius: 16px;
-    color: var(--accent);
-    font-size: 1.5rem;
+    border-radius: 12px;
     flex-shrink: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefit h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--on-surface);
+}
+
+.benefit p {
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .benefits {
+        gap: 1.5rem;
+    }
+
+    .benefit {
+        padding: 1.25rem;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .benefit .icon {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Communities Section */
@@ -363,64 +425,104 @@ main {
 
 /* Waitlist Section */
 .waitlist {
+    background: var(--surface);
+    padding: 6rem 0;
     text-align: center;
-    padding: var(--spacing-2xl) var(--container-padding);
-    background: var(--gradient-secondary);
-    margin: var(--spacing-xl) calc(var(--container-padding) * -1);
-    color: var(--on-surface);
-    border-radius: 32px;
-    position: relative;
-    overflow: hidden;
 }
 
-.waitlist::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gradient-primary);
-    opacity: 0.5;
+.waitlist .container {
+    max-width: 600px;
+}
+
+.waitlist h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--on-surface);
+}
+
+.waitlist p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: var(--on-surface-variant);
 }
 
 .waitlist-form {
     display: flex;
-    gap: var(--spacing-base);
+    gap: 1rem;
     max-width: 500px;
-    margin: var(--spacing-xl) auto 0;
+    margin: 0 auto;
 }
 
 .waitlist-form input {
     flex: 1;
-    padding: 16px 24px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--surface-light);
     border-radius: 100px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--surface-light);
     color: var(--on-surface);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 0.2s;
 }
 
 .waitlist-form input:focus {
     outline: none;
     border-color: var(--primary);
-    background: white;
-    box-shadow: var(--shadow-md);
 }
 
-/* Final CTA */
+@media (max-width: 768px) {
+    .waitlist {
+        padding: 4rem 0;
+    }
+
+    .waitlist-form {
+        flex-direction: column;
+    }
+
+    .waitlist-form input {
+        width: 100%;
+    }
+}
+
+/* Final CTA Section */
 .final-cta {
+    background: linear-gradient(to bottom right, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 6rem 0;
     text-align: center;
-    padding: var(--spacing-2xl) 0;
-    margin-top: var(--spacing-xl);
+    color: var(--on-primary);
+}
+
+.final-cta .container {
+    max-width: 600px;
+}
+
+.final-cta h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
 }
 
 .final-subtitle {
-    color: var(--on-surface-variant);
-    margin: var(--spacing-base) auto var(--spacing-xl);
-    max-width: 600px;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.final-cta .cta-primary {
+    background: white;
+    color: var(--primary);
+    margin: 0 auto;
+}
+
+.final-cta .cta-primary:hover {
+    background: var(--surface-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .final-cta {
+        padding: 4rem 0;
+    }
 }
 
 /* Responsive Design */
