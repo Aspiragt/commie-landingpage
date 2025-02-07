@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006980871771",
+    "project_id": "commie-47682",
+    "storage_bucket": "commie-47682.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006980871771:ios:335021b4d632a2f0b3f17e",
+        "android_client_info": {
+          "package_name": "com.commie.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6aXCg-UEFHJdzAl0Z3g3YZ1hnbpaKLHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
