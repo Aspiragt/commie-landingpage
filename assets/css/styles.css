@@ -204,27 +204,28 @@ main {
     margin-top: 64px; /* Altura del header */
 }
 
-/* Buttons */
+/* Buttons and Links */
 .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     font-size: 1.125rem;
     padding: 1rem 2rem;
     border-radius: 100px;
     background: var(--primary);
-    color: var(--on-surface);
+    color: var(--on-primary) !important;
     border: none;
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    background: var(--accent);
-    color: white;
-    box-shadow: var(--shadow-lg);
+    background: var(--primary-dark);
+    text-decoration: none;
 }
 
 .store-button {
@@ -796,4 +797,10 @@ main {
 
 .community-card:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Altura del header + padding extra */
 }
