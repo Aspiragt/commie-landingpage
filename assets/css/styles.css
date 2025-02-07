@@ -1,8 +1,8 @@
 :root {
     /* Color system - Yacht Rock Theme */
-    --primary: #FFB07F !important;
-    --primary-dark: #FFA06F !important;
-    --accent: #FF6473 !important;
+    --primary: #FFB07F;
+    --primary-dark: #FFA06F;
+    --accent: #FF6473;
     --surface: #FFFFFF;
     --surface-light: #F5F7FA;
     --background: #FFFFFF;
@@ -42,10 +42,9 @@ body {
     background: var(--background);
 }
 
-/* Scroll Behavior */
+/* Reset scroll behavior */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-behavior: auto !important;
 }
 
 /* Container */
@@ -85,27 +84,17 @@ html {
     text-decoration: none;
 }
 
-.nav-cta {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 100px;
-    background: var(--primary) !important;
-    color: var(--on-primary) !important;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
+.nav-cta, 
+.cta-primary {
+    background-color: #FFB07F !important;
+    color: #334E68 !important;
+    border: none !important;
 }
 
-.nav-cta:hover {
-    background: var(--primary-dark) !important;
-    transform: translateY(-2px);
-    color: var(--on-primary) !important;
-    text-decoration: none;
+.nav-cta:hover, 
+.cta-primary:hover {
+    background-color: #FFA06F !important;
+    color: #334E68 !important;
 }
 
 /* Hero Section */
@@ -145,30 +134,6 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-}
-
-.cta-primary {
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
-    border-radius: 100px;
-    background: var(--primary) !important;
-    color: var(--on-primary) !important;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-}
-
-.cta-primary:hover {
-    background: var(--primary-dark) !important;
-    transform: translateY(-2px);
-    color: var(--on-primary) !important;
-    text-decoration: none;
 }
 
 .store-buttons {
