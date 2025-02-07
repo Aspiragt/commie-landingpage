@@ -574,6 +574,194 @@ main {
     }
 }
 
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* General */
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Header */
+    .main-header {
+        padding: 0.75rem 0;
+    }
+
+    .nav-wrapper {
+        padding: 0 1.25rem;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 7rem 0 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    /* CTAs */
+    .cta-group {
+        padding: 0 1rem;
+    }
+
+    .cta-primary {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .store-buttons {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .store-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    /* Benefits */
+    .benefits {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .benefit {
+        padding: 1.25rem;
+        margin: 0.5rem 0;
+    }
+
+    .benefit .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .benefit h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    /* Social Proof */
+    .social-proof {
+        padding: 3rem 0;
+    }
+
+    .fomo {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        margin-bottom: 2rem;
+        width: calc(100% - 2.5rem);
+    }
+
+    /* Waitlist */
+    .waitlist {
+        padding: 3rem 0;
+    }
+
+    .waitlist h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .waitlist p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .waitlist-form {
+        padding: 0 1rem;
+    }
+
+    .waitlist-form input {
+        padding: 0.875rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 3rem 0;
+    }
+
+    .final-cta h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .final-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.125rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.875rem;
+    }
+
+    .cta-primary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .store-button {
+        padding: 0.625rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .benefit {
+        padding: 1rem;
+    }
+
+    .benefit h3 {
+        font-size: 1rem;
+    }
+
+    .benefit p {
+        font-size: 0.8125rem;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
