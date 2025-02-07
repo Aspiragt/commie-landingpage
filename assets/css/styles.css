@@ -42,9 +42,10 @@ body {
     background: var(--background);
 }
 
-/* Reset scroll behavior */
+/* Prevenir FOUC y scroll automático */
 html {
     scroll-behavior: auto !important;
+    scroll-padding-top: 0 !important;
 }
 
 /* Container */
@@ -86,15 +87,36 @@ html {
 
 .nav-cta, 
 .cta-primary {
-    background-color: #FFB07F !important;
-    color: #334E68 !important;
+    background-color: var(--primary) !important;
+    color: var(--on-surface) !important;
     border: none !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+    cursor: pointer !important;
 }
 
 .nav-cta:hover, 
 .cta-primary:hover {
-    background-color: #FFA06F !important;
-    color: #334E68 !important;
+    background-color: var(--primary-dark) !important;
+    color: var(--on-surface) !important;
+    transform: translateY(-2px) !important;
+}
+
+.nav-cta {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 100px !important;
+}
+
+.cta-primary {
+    font-size: 1.125rem !important;
+    padding: 1rem 2rem !important;
+    border-radius: 100px !important;
 }
 
 /* Hero Section */
