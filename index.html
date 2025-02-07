@@ -1,37 +1,73 @@
-<main>
-    <section class="hero">
-        <!-- Elementos Flotantes -->
-        <div class="floating-elements">
-            <div class="floating-bubble bubble-1"></div>
-            <div class="floating-bubble bubble-2"></div>
-            <div class="floating-bubble bubble-3"></div>
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-dot dot-1"></div>
-            <div class="floating-dot dot-2"></div>
-            <div class="floating-dot dot-3"></div>
-        </div>
-        
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commie - Eventos locales que importan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="main-header">
         <div class="container">
-            <h1>Eventos locales que importan</h1>
-            <h2>Conecta con comunidades reales</h2>
-            <p class="subtitle">Descubre meetups auténticos organizados por comunidades locales. Sin grupos saturados, sin spam, solo eventos relevantes con personas que comparten tus intereses.</p>
-            <div class="cta-group">
-                <a href="#joinWaitlist" class="cta-primary">
+            <nav class="nav-wrapper">
+                <a href="/" class="logo">Commie</a>
+                <a href="#joinWaitlist" class="nav-cta">
                     <i class="fas fa-rocket"></i>
-                    Únete a la lista de espera Beta
+                    Acceso Beta
                 </a>
-                <div class="store-buttons">
-                    <button class="store-button">
-                        <i class="fab fa-apple"></i>
-                        Próximamente
-                    </button>
-                    <button class="store-button">
-                        <i class="fab fa-google-play"></i>
-                        Próximamente
-                    </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Elementos Flotantes -->
+            <div class="floating-elements">
+                <div class="floating-bubble bubble-1"></div>
+                <div class="floating-bubble bubble-2"></div>
+                <div class="floating-bubble bubble-3"></div>
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-dot dot-1"></div>
+                <div class="floating-dot dot-2"></div>
+                <div class="floating-dot dot-3"></div>
+            </div>
+            
+            <div class="container">
+                <h1>Eventos locales que importan</h1>
+                <h2>Conecta con comunidades reales</h2>
+                <p class="subtitle">Descubre meetups auténticos organizados por comunidades locales. Sin grupos saturados, sin spam, solo eventos relevantes con personas que comparten tus intereses.</p>
+                <div class="cta-group">
+                    <a href="#joinWaitlist" class="cta-primary">
+                        <i class="fas fa-rocket"></i>
+                        Únete a la lista de espera Beta
+                    </a>
+                    <div class="store-buttons">
+                        <button class="store-button">
+                            <i class="fab fa-apple"></i>
+                            Próximamente
+                        </button>
+                        <button class="store-button">
+                            <i class="fab fa-google-play"></i>
+                            Próximamente
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
+
+    <script>
+        // Prevenir FOUC
+        document.documentElement.style.scrollBehavior = "auto";
+        if (window.location.hash) {
+            window.scrollTo(0, 0);
+            history.replaceState("", document.title, window.location.pathname);
+        }
+    </script>
+</body>
+</html>
