@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Detectar y ajustar la URL base
+    const baseUrl = window.location.origin;
+    const links = document.querySelectorAll('a[href^="/"]');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/')) {
+            link.href = `${baseUrl}${href}`;
+        }
+    });
+
+    // Ajustar rutas de assets
+    const cssLinks = document.querySelectorAll('link[rel="stylesheet"][href^="/"]');
+    const images = document.querySelectorAll('img[src^="/"]');
+    
+    cssLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/')) {
+            link.href = `${baseUrl}${href}`;
+        }
+    });
+    
+    images.forEach(img => {
+        const src = img.getAttribute('src');
+        if (src.startsWith('/')) {
+            img.src = `${baseUrl}${src}`;
+        }
+    });
+
     // Scroll suave para todos los enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
