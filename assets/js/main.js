@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevenir scroll automático al recargar
+    if (window.location.hash) {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 1);
+    }
+
     // Detectar y ajustar la URL base
     const baseUrl = window.location.origin;
     const links = document.querySelectorAll('a[href^="/"]');
@@ -27,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Scroll suave para todos los enlaces internos
+    // Scroll suave solo para clicks, no para recargas
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -35,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                // Calcular la posición considerando el header fijo
-                const headerOffset = 64; // Altura del header
+                const headerOffset = 64;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -44,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
+
+                // Actualizar URL sin causar scroll
+                history.pushState(null, null, `#${targetId}`);
             }
         });
     });
@@ -65,24 +75,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             try {
-                // Deshabilitar el formulario mientras se procesa
                 emailInput.disabled = true;
                 submitButton.disabled = true;
                 submitButton.style.opacity = '0.7';
                 
-                // Aquí irá la lógica para enviar el email al backend
                 console.log('Email registrado:', email);
-                
-                // Mostrar mensaje de éxito
                 alert('¡Gracias por unirte! Te contactaremos pronto.');
-                
-                // Resetear el formulario
                 this.reset();
             } catch (error) {
                 console.error('Error:', error);
                 alert('Hubo un error. Por favor intenta de nuevo.');
             } finally {
-                // Re-habilitar el formulario
                 emailInput.disabled = false;
                 submitButton.disabled = false;
                 submitButton.style.opacity = '1';

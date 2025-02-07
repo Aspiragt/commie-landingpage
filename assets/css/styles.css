@@ -1,8 +1,8 @@
 :root {
     /* Color system - Yacht Rock Theme */
-    --primary: #FFB07F;
-    --primary-dark: #FFA06F;
-    --accent: #FF6473;
+    --primary: #FFB07F !important;
+    --primary-dark: #FFA06F !important;
+    --accent: #FF6473 !important;
     --surface: #FFFFFF;
     --surface-light: #F5F7FA;
     --background: #FFFFFF;
@@ -89,8 +89,8 @@ html {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
     border-radius: 100px;
-    background: var(--primary);
-    color: var(--on-primary);
+    background: var(--primary) !important;
+    color: var(--on-primary) !important;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -102,9 +102,9 @@ html {
 }
 
 .nav-cta:hover {
-    background: var(--primary-dark);
+    background: var(--primary-dark) !important;
     transform: translateY(-2px);
-    color: var(--on-primary);
+    color: var(--on-primary) !important;
     text-decoration: none;
 }
 
@@ -151,8 +151,8 @@ html {
     font-size: 1.125rem;
     padding: 1rem 2rem;
     border-radius: 100px;
-    background: var(--primary);
-    color: var(--on-primary);
+    background: var(--primary) !important;
+    color: var(--on-primary) !important;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -165,9 +165,9 @@ html {
 }
 
 .cta-primary:hover {
-    background: var(--primary-dark);
+    background: var(--primary-dark) !important;
     transform: translateY(-2px);
-    color: var(--on-primary);
+    color: var(--on-primary) !important;
     text-decoration: none;
 }
 
