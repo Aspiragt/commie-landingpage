@@ -41,7 +41,10 @@
         <div class="container">
             <nav class="nav-wrapper">
                 <a href="/" class="logo">Commie</a>
-                <button class="nav-cta">Registrarse</button>
+                <button class="nav-cta" id="headerJoinBtn" aria-label="Únete a la lista de espera">
+                    <i class="fas fa-rocket"></i>
+                    Registrarse
+                </button>
             </nav>
         </div>
     </header>
@@ -53,10 +56,10 @@
                 <h2>Eventos curados para personas como tú</h2>
                 <p class="subtitle">Descubre meetups auténticos organizados por comunidades locales. Sin grupos de WhatsApp saturados, sin spam, solo eventos relevantes con personas que comparten tus intereses.</p>
                 <div class="cta-group">
-                    <a href="#beta-form" class="cta-primary" aria-label="Únete a la lista de espera beta">
+                    <button class="cta-primary" aria-label="Únete a la lista de espera beta">
                         <i class="fas fa-rocket"></i>
                         Únete a la lista de espera Beta
-                    </a>
+                    </button>
                     <div class="store-buttons">
                         <button class="store-button" aria-label="Próximamente en App Store">
                             <i class="fab fa-apple"></i>
@@ -144,7 +147,7 @@
             </div>
         </section>
 
-        <section id="beta-form" class="waitlist">
+        <section class="waitlist" id="joinWaitlist">
             <div class="container">
                 <h2>Sé parte de la Beta</h2>
                 <p>Únete a la lista de espera y sé de los primeros en probar Commie. Ayúdanos a construir una comunidad donde los eventos sean significativos y las conexiones reales.</p>
@@ -162,10 +165,10 @@
             <div class="container">
                 <h2>Sé parte del cambio</h2>
                 <p class="final-subtitle">Únete a la Beta y ayúdanos a crear la mejor plataforma de eventos locales</p>
-                <a href="#beta-form" class="cta-primary">
+                <button class="cta-primary">
                     <i class="fas fa-rocket"></i>
                     Acceso Beta Anticipado
-                </a>
+                </button>
             </div>
         </section>
     </main>

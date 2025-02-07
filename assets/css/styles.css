@@ -32,20 +32,18 @@
     --container-padding: 16px;
 }
 
-/* Base styles */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--on-surface);
     background: var(--background);
-    overflow-x: hidden;
+    color: var(--on-surface);
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -90,15 +88,15 @@ h3 {
 
 /* Header */
 .main-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
 }
 
 .nav-wrapper {
@@ -119,22 +117,30 @@ h3 {
 }
 
 .nav-cta {
-    background: var(--primary);
-    color: var(--on-surface);
-    border: none;
-    padding: 8px 24px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 600;
+    background: var(--primary);
+    color: var(--on-primary);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
 }
 
 .nav-cta:hover {
-    background: var(--accent);
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .nav-cta {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
 }
 
 /* Hero Section */
@@ -203,43 +209,30 @@ h3 {
 
 /* Adjust main content */
 main {
-    padding-top: 64px;
+    margin-top: 64px; /* Altura del header */
 }
 
-/* Buttons and Links */
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    color: var(--primary-dark);
-}
-
+/* Buttons */
 .cta-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
     font-size: 1.125rem;
     padding: 1rem 2rem;
     border-radius: 100px;
     background: var(--primary);
-    color: white !important;
+    color: var(--on-surface);
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
 }
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    background: var(--primary-dark);
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--accent);
+    color: white;
+    box-shadow: var(--shadow-lg);
 }
 
 .store-button {
@@ -443,7 +436,6 @@ a:hover {
     background: var(--surface);
     padding: 6rem 0;
     text-align: center;
-    scroll-margin-top: 100px;
 }
 
 .waitlist .container {
