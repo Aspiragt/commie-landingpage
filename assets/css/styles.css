@@ -32,18 +32,20 @@
     --container-padding: 16px;
 }
 
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Base styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--background);
+    line-height: 1.6;
     color: var(--on-surface);
-    line-height: 1.5;
+    background: var(--background);
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -88,15 +90,15 @@ h3 {
 
 /* Header */
 .main-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    padding: 1rem 0;
-    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
 }
 
 .nav-wrapper {
@@ -201,10 +203,20 @@ h3 {
 
 /* Adjust main content */
 main {
-    margin-top: 64px; /* Altura del header */
+    padding-top: 64px;
 }
 
 /* Buttons and Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
 .cta-primary {
     display: inline-flex;
     align-items: center;
@@ -214,18 +226,20 @@ main {
     padding: 1rem 2rem;
     border-radius: 100px;
     background: var(--primary);
-    color: var(--on-primary) !important;
+    color: white !important;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+    transition: all 0.2s ease-in-out;
     font-weight: 600;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .cta-primary:hover {
     transform: translateY(-2px);
     background: var(--primary-dark);
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .store-button {
@@ -429,6 +443,7 @@ main {
     background: var(--surface);
     padding: 6rem 0;
     text-align: center;
+    scroll-margin-top: 100px;
 }
 
 .waitlist .container {
@@ -797,10 +812,4 @@ main {
 
 .community-card:nth-child(3) {
     animation-delay: 0.4s;
-}
-
-/* Add smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Altura del header + padding extra */
 }
