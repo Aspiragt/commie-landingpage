@@ -83,25 +83,24 @@ h3 {
 
 /* Header */
 .main-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.98);
+    z-index: 100;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--surface-light);
-    z-index: 1000;
-    height: 64px;
-    display: flex;
-    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 0 var(--container-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .logo {
@@ -133,10 +132,11 @@ h3 {
 
 /* Hero Section */
 .hero {
-    min-height: 70vh;
-    padding: 6rem 0 4rem;
+    min-height: 50vh;
+    padding: 4rem 0 2rem;
     display: flex;
     align-items: center;
+    margin-top: 0;
     background: linear-gradient(to bottom, var(--surface-light) 0%, var(--surface) 100%);
 }
 
@@ -147,22 +147,22 @@ h3 {
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.75rem, 4vw, 3rem);
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--on-surface);
 }
 
 .hero h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    margin-bottom: 1rem;
     color: var(--on-surface-variant);
 }
 
 .hero .subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
     color: var(--on-surface-variant);
     max-width: 600px;
 }
@@ -170,9 +170,9 @@ h3 {
 .cta-group {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     align-items: center;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
+    margin-top: 1.5rem;
 }
 
 /* Adjust main content */
