@@ -198,66 +198,69 @@ button.cta-primary:hover {
 /* Benefits Section */
 .social-proof {
     padding: 4rem 0;
-    background: var(--surface);
+    background: var(--surface-light);
 }
 
 .fomo {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--on-surface);
     margin-bottom: 3rem;
-    padding: 1rem 2rem;
-    background: var(--surface-light);
-    border-radius: 12px;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 0 auto;
+    padding: 1rem;
 }
 
 .benefit {
     display: flex;
-    gap: 1.5rem;
     align-items: flex-start;
-    padding: 1.5rem;
-    background: var(--surface-light);
-    border-radius: 16px;
-    transition: transform 0.2s;
-}
-
-.benefit:hover {
-    transform: translateY(-4px);
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .benefit .icon {
-    width: 3rem;
-    height: 3rem;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: var(--primary);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--surface);
-    border-radius: 12px;
-    color: var(--primary);
+    color: var(--on-primary);
     font-size: 1.5rem;
-    flex-shrink: 0;
 }
 
 .benefit h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.75rem;
     color: var(--on-surface);
+    margin-bottom: 0.5rem;
 }
 
 .benefit p {
     color: var(--on-surface-variant);
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .benefits {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+    
+    .benefit {
+        padding: 0.5rem;
+    }
 }
 
 /* Waitlist Section */
