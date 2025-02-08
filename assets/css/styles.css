@@ -195,7 +195,7 @@ button.cta-primary:hover {
     transform: translateY(-2px);
 }
 
-/* Benefits Section */
+/* Social Proof & Benefits */
 .social-proof {
     padding: 4rem 0;
     background: var(--surface-light);
@@ -210,20 +210,33 @@ button.cta-primary:hover {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .benefits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 16px;
 }
 
 .benefit {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 16px;
+    padding: 24px;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .benefit .icon {
@@ -236,13 +249,18 @@ button.cta-primary:hover {
     align-items: center;
     justify-content: center;
     color: var(--on-primary);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.benefit-content {
+    flex: 1;
 }
 
 .benefit h3 {
     font-size: 1.25rem;
+    font-weight: 600;
     color: var(--on-surface);
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .benefit p {
@@ -251,15 +269,26 @@ button.cta-primary:hover {
     line-height: 1.5;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+    .social-proof {
+        padding: 3rem 0;
+    }
+
     .benefits {
         grid-template-columns: 1fr;
-        padding: 0.5rem;
+        gap: 16px;
+        padding: 8px;
     }
-    
+
     .benefit {
-        padding: 0.5rem;
+        padding: 16px;
+    }
+
+    .benefit .icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -432,14 +461,13 @@ button.cta-primary:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .event-grid {
+    .benefits {
         grid-template-columns: 1fr;
         padding: 0.5rem;
     }
     
-    .event-card {
-        max-width: 400px;
-        margin: 0 auto;
+    .benefit {
+        padding: 0.5rem;
     }
 }
 
