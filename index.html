@@ -138,17 +138,75 @@
             </div>
         </section>
 
-        <section class="waitlist">
+        <section class="benefits" id="benefits">
             <div class="container">
-                <h2>Sé parte del cambio</h2>
-                <p>Únete a Commie y ayúdanos a construir una comunidad donde los eventos sean significativos y las conexiones reales</p>
-                <form id="waitlistForm" class="waitlist-form">
-                    <input type="email" placeholder="Tu email" required aria-label="Tu dirección de email">
-                    <button type="submit" class="cta-primary">
-                        <i class="fas fa-arrow-right"></i>
-                        Acceso anticipado
-                    </button>
-                </form>
+                <div class="benefits-grid">
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Comunidades Reales</h3>
+                        <p>Conecta con personas que comparten tus intereses en tu ciudad. Sin perfiles falsos, sin spam.</p>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Eventos Verificados</h3>
+                        <p>Todos los eventos son curados y verificados. Solo contenido relevante y de calidad.</p>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Descubre tu Ciudad</h3>
+                        <p>Encuentra eventos y lugares interesantes cerca de ti. Explora tu ciudad de una nueva manera.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="waitlist" id="waitlist">
+            <div class="container">
+                <div class="waitlist-content">
+                    <h2>Únete a la Lista de Espera</h2>
+                    <p>Sé de los primeros en probar Commie y ayúdanos a construir mejores comunidades.</p>
+                    
+                    <form id="waitlistForm" class="waitlist-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ciudad</label>
+                            <select id="city" name="city" required>
+                                <option value="">Selecciona tu ciudad</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="GDL">Guadalajara</option>
+                                <option value="MTY">Monterrey</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="interests">¿Qué tipo de eventos te interesan?</label>
+                            <textarea id="interests" name="interests" rows="3" placeholder="Tecnología, arte, deportes, etc."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Acepto los <a href="/terms">términos y condiciones</a></label>
+                        </div>
+                        <button type="submit" class="cta-primary">
+                            <i class="fas fa-rocket"></i>
+                            Unirme a la lista de espera
+                        </button>
+                    </form>
+                </div>
+                <div class="waitlist-image">
+                    <img src="assets/images/community.svg" alt="Comunidad Commie" class="floating">
+                </div>
             </div>
         </section>
 

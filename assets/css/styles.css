@@ -301,120 +301,199 @@ button.cta-primary:hover {
 }
 
 /* Benefits Section */
-.social-proof {
+.benefits {
     background: var(--surface-light);
-    padding: 80px 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     overflow: hidden;
 }
 
-.fomo {
-    text-align: center;
-    font-size: 1.25rem;
-    color: var(--on-surface);
-    margin-bottom: 3rem;
-    padding: 1rem 2rem;
-    background: var(--surface-light);
-    border-radius: 12px;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-}
-
-.benefits {
+.benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 .benefit {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 24px;
-    padding: 2rem;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background: var(--surface);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--elevation-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .benefit:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-2);
 }
 
-.benefit .icon {
-    width: 60px;
-    height: 60px;
-    background: var(--gradient-button);
-    border-radius: 20px;
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-xs);
 }
 
-.benefit .icon i {
-    font-size: 24px;
+.benefit-icon i {
+    font-size: 1.5rem;
     color: white;
 }
 
 .benefit h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-weight: 600;
     color: var(--on-surface);
+    margin: var(--spacing-xs) 0;
 }
 
 .benefit p {
     color: var(--on-surface-variant);
     line-height: 1.6;
+    margin: 0;
 }
 
 /* Waitlist Section */
 .waitlist {
-    padding: 6rem 0;
+    padding: var(--spacing-lg) 0;
     background: var(--surface);
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .waitlist .container {
-    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.waitlist-content {
+    max-width: 500px;
 }
 
 .waitlist h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--on-surface);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
 }
 
 .waitlist p {
     font-size: 1.125rem;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
     color: var(--on-surface-variant);
+    margin-bottom: var(--spacing-md);
 }
 
 .waitlist-form {
     display: flex;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
-.waitlist-form input {
-    flex: 1;
-    padding: 1rem 1.5rem;
-    border: 2px solid var(--surface-light);
-    border-radius: 100px;
-    font-size: 1rem;
-    background: var(--surface-light);
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--on-surface);
-    transition: all 0.2s ease;
 }
 
-.waitlist-form input:focus {
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    color: var(--on-surface);
+    background: var(--surface);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background: var(--surface);
+    box-shadow: 0 0 0 3px rgba(255, 176, 127, 0.2);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.checkbox-group label {
+    font-size: 0.875rem;
+    color: var(--on-surface-variant);
+}
+
+.checkbox-group a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.waitlist-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waitlist-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.waitlist-image .floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .waitlist .container {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-content {
+        max-width: 100%;
+    }
+
+    .waitlist-image {
+        order: -1;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .waitlist-image img {
+        max-width: 80%;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Final CTA */
