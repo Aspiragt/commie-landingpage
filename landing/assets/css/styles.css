@@ -128,6 +128,68 @@ body {
     overflow: hidden;
 }
 
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 176, 127, 0.2), rgba(255, 100, 115, 0.2));
+    pointer-events: none;
+    animation: float 20s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.bubble:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -10s;
+}
+
+.bubble:nth-child(4) {
+    width: 250px;
+    height: 250px;
+    top: 30%;
+    right: 20%;
+    animation-delay: -15s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-20px, 20px) rotate(5deg);
+    }
+    50% {
+        transform: translate(20px, -20px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(20px, 20px) rotate(5deg);
+    }
+}
+
 .hero .container {
     position: relative;
     z-index: 2;
@@ -291,10 +353,180 @@ body {
     outline: none;
 }
 
+/* Social Proof Section */
+.social-proof {
+    padding-block: var(--section-spacing);
+    background: var(--background-alt);
+    text-align: center;
+}
+
+.fomo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    background: var(--surface);
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.fomo i {
+    color: var(--accent);
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.benefit {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.benefit:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--background-alt);
+    border-radius: 12px;
+    color: var(--primary);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.benefit-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--on-surface);
+}
+
+.benefit-content p {
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+}
+
+/* Community Cards */
+.category-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--background-alt);
+    color: var(--primary);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.community-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--on-surface);
+}
+
+.community-card p {
+    color: var(--on-surface-variant);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.community-stats {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--on-surface-variant);
+    font-size: 0.875rem;
+}
+
+.community-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Final CTA Section */
+.final-cta {
+    padding-block: var(--section-spacing);
+    text-align: center;
+    background: var(--surface);
+}
+
+.final-cta h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.final-subtitle {
+    font-size: 1.25rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 3rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         padding-block: calc(var(--section-spacing) * 0.75);
+    }
+
+    .fomo {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        margin-inline: 1rem;
+    }
+
+    .benefits {
+        gap: 1rem;
+        padding-inline: 1rem;
+    }
+
+    .benefit {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .benefit .icon {
+        margin-bottom: 1rem;
+    }
+
+    .benefit-content h3 {
+        font-size: 1.125rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.875rem;
+    }
+
+    .community-card {
+        margin-inline: 1rem;
+    }
+
+    .community-stats {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
     .waitlist-form {
