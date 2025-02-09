@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon" href="https://commie.life/assets/apple-touch-icon.png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://commie.life/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Canonical URL -->
@@ -46,18 +46,21 @@
             </nav>
         </div>
     </header>
-    <main class="container">
+
+    <main>
         <section class="hero">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
+            <div class="hero-background">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
             <div class="container">
                 <h1>Conecta con comunidades reales en tu ciudad</h1>
                 <h2>Eventos curados para personas como tú</h2>
                 <p class="subtitle">Descubre meetups auténticos organizados por comunidades locales. Sin grupos saturados, sin spam, solo eventos que realmente te interesan con personas que comparten tus pasiones.</p>
                 <div class="cta-group">
-                    <button class="cta-primary" aria-label="Únete a la lista de espera beta">
+                    <button class="cta-primary" onclick="document.querySelector('.waitlist').scrollIntoView({behavior:'smooth'})" aria-label="Únete a la lista de espera beta">
                         <i class="fas fa-rocket"></i>
                         Únete a la lista de espera
                     </button>
@@ -166,7 +169,7 @@
             <div class="container">
                 <h2>Conéctate con tu comunidad local</h2>
                 <p class="final-subtitle">Descubre eventos auténticos y personas reales que comparten tus intereses</p>
-                <button class="cta-primary">
+                <button class="cta-primary" onclick="document.querySelector('.waitlist').scrollIntoView({behavior:'smooth'})">
                     <i class="fas fa-compass"></i>
                     Explora eventos cerca de ti
                 </button>
